@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Adivina la Palabra</title>
+    <style>
+        /* Tus estilos aquí, no han cambiado */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #00bfa5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-button:hover {
+            background-color: #008f7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Formulario Adivina la Palabra</h1>
+        <form action="https://formspree.io/f/xdkoojgo" method="POST">
+            
+            <!-- Pregunta abierta -->
+            <div class="question">
+                <label for="nombre">1. ¿Cuál es tu nombre?</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <!-- Pregunta de opción múltiple -->
+            <div class="question">
+                <label>2. ¿Qué tipo de juegos prefieres?</label><br>
+                <input type="radio" id="aventura" name="tipo_juego" value="aventura">
+                <label for="aventura">Aventura</label><br>
+                <input type="radio" id="puzzle" name="tipo_juego" value="puzzle">
+                <label for="puzzle">Puzzle</label><br>
+                <input type="radio" id="estrategia" name="tipo_juego" value="estrategia">
+                <label for="estrategia">Estrategia</label><br>
+            </div>
+            
+            <!-- Pregunta de selección -->
+            <div class="question">
+                <label for="dificultad">3. ¿Cuál es tu nivel de habilidad en juegos de palabras?</label>
+                <select id="dificultad" name="dificultad">
+                    <option value="principiante">Principiante</option>
+                    <option value="intermedio">Intermedio</option>
+                    <option value="avanzado">Avanzado</option>
+                </select>
+            </div>
+            
+            <!-- Pregunta de casillas de verificación -->
+            <div class="question">
+                <label>4. ¿Cuáles son tus plataformas de juego favoritas?</label><br>
+                <input type="checkbox" id="pc" name="plataformas" value="PC">
+                <label for="pc">PC</label><br>
+                <input type="checkbox" id="consola" name="plataformas" value="Consola">
+                <label for="consola">Consola</label><br>
+                <input type="checkbox" id="movil" name="plataformas" value="Móvil">
+                <label for="movil">Móvil</label><br>
+            </div>
+            
+            <!-- Pregunta abierta larga -->
+            <div class="question">
+                <label for="comentarios">5. ¿Qué te gustaría mejorar en el juego "Adivina la Palabra"?</label>
+                <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+            </div>
+
+            <!-- Continuación con más preguntas -->
+            <div class="question">
+                <label>6. ¿Te gusta resolver acertijos?</label><br>
+                <input type="radio" id="si" name="acertijos" value="si">
+                <label for="si">Sí</label><br>
+                <input type="radio" id="no" name="acertijos" value="no">
+                <label for="no">No</label><br>
+            </div>
+
+            <div class="question">
+                <label for="frecuencia">7. ¿Con qué frecuencia juegas en línea?</label>
+                <select id="frecuencia" name="frecuencia">
+                    <option value="diario">Diario</option>
+                    <option value="semanal">Semanal</option>
+                    <option value="ocasional">Ocasional</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label for="correo">8. ¿Cuál es tu correo electrónico?</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+
+            <!-- Más preguntas hasta llegar a 15 -->
+
+            <input type="submit" value="Enviar Respuestas" class="submit-button">
+        </form>
+    </div>
+</body>
+</html>
